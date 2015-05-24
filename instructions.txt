@@ -1,0 +1,6 @@
+Create a branch of your repository for the homework and make your changes in that branch.
+Commit and push your changes to the branch.
+Create a pull request for the code you'd like to turn in. Once you've setup the repository, you need to add MIDS-W205 as a collaborator.
+Your instructor can now view the pull request and grade the assignment.
+Once your instructor has graded the assignment, your pull request is merged as a final notification.
+You can now delete the branch as the changes have been merged with the master.
