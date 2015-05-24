@@ -1,0 +1,16 @@
+Assignment 1
+
+Turn in:
+A copy of the output directory for the tag counter running locally (name the directory 'out').
+A copy of the output from S3 for the tag counter running on AWS (name the directory 'emr-out').
+How long did it take to run the process for each of these?
+How many address tags are there in the input?
+Does the local version and EMR version give the same answer?
+
+Part 1) 
+(a) Running locally
+real	2m1.126s
+user	1m53.579s
+sys	0m3.960s
+
+(b) Running with aws S3
