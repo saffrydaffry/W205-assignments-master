@@ -1,4 +1,4 @@
-Assignment 1
+Assignment 1—Safyre Anderson
 
 Turn in:
 A copy of the output directory for the tag counter running locally (name the directory 'out').
@@ -11,12 +11,41 @@ How many address tags are there in the input?
 Does the local version and EMR version give the same answer?
 
 Part 1) 
-(a) Running locally
+(a) Running test-1 locally using “time”:
 real	2m1.126s
 user	1m53.579s
 sys	0m3.960s
 
-(b) Running with aws S3
+(b) Running test-1 with AWS EMR. It took 635 seconds to provision and bootstrap the EC2 instances already and 249 seconds to run the job. The total time from the “time” command was:
 real	24m5.580s
 user	0m2.008s
 sys	0m0.175s
+
+The initial setup for EMR takes the bulk of the time. The local run has the advantage of skipping this step.
+
+Note: for fun, I ran the test-100 with EMR using 5 instances. The output from the time command was:
+real	53m47.008s
+user	0m4.563s
+sys	0m0.345s
+
+I was too scared to kill my computer to try test-100 locally as downloading each of the 100 files alone took forever! It would have been nice to compare, but I think the winner is clearly EMR for large files.
+
+Part 2)
+Using less *|grep "address" on the output in “out” (local run):
+"address"	2042
+"addresses"	19
+"addressother"	1
+"ccbillingaddress"	1
+"creditcardbillingaddress"	1
+"emailaddressalternate"	1
+"eoneaddress"	1
+"otheraddresses"	31
+
+There are 2042 address tags in the input.
+
+Part 3)
+Note: See tag_count.py for code used.
+The contents of the output for both methods were found to be identical except in the structure of the output.  In the local run, the tags were put in a single file called “part-00000” that was about 55Kb in size.  On the other hand, in the EMR run, the output was split into 11 files from “part-00000” to “part-00010” which were 5Kb each.
+
+After combining the EMR outputs into one file and sorting both the local and combined EMR results, I compared the two and found they were identical. (see result2.txt and part_sort.txt).
+
