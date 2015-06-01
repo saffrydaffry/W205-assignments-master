@@ -3,6 +3,9 @@ Assignment 1
 Turn in:
 A copy of the output directory for the tag counter running locally (name the directory 'out').
 A copy of the output from S3 for the tag counter running on AWS (name the directory 'emr-out').
+	can download using a S3 console tool: https://aws.amazon.com/cli/
+	can use to sync bucket to local folder
+
 How long did it take to run the process for each of these?
 How many address tags are there in the input?
 Does the local version and EMR version give the same answer?
@@ -14,3 +17,6 @@ user	1m53.579s
 sys	0m3.960s
 
 (b) Running with aws S3
+real	24m5.580s
+user	0m2.008s
+sys	0m0.175s
