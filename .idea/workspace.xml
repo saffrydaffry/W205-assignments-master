@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d17bddd-bce7-4e4b-a5a9-996cd94cbf1b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HW2/text_cleaning.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/W205-assignments-master.iml" afterPath="$PROJECT_DIR$/.idea/W205-assignments-master.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="W205-assignments-master.iws" />
     <ignored path=".idea/workspace.xml" />
