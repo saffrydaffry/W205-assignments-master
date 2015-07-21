@@ -6,6 +6,7 @@ Please see the uploaded twitter files here:
 s3://w205_hw2bucket
 
 # Assignment 3
+*files are in HW3 folder!*
 
 -1.1 Creating db_restT
 Key files: TweetToMongo.py, MongoGetSet.py
