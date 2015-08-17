@@ -52,6 +52,7 @@ The backups.py file contains two functions, one that creates backups in S3 and a
 
 # Assignment 4
 - Part 1
+twitterFIFA (directory), csv_clean_and_upload.py
 To extract tweets, I wrote a scrapy program based off of the scrapy spider tutorial. The tweets were saved in a 'preprocessed' .csv file using the built-in writing function from scrapy (terminal command: scrapy crawl [spidername] -o output.csv).  Then I used a script called csv_clean_and_upload.py which reformatted the csv file to clean text and separate hashtags and urls for the MapReduce part. Then that output (WC2015.csv) was uploaded to S3 here: https://s3-us-west-2.amazonaws.com/w205hw4safyre/input/WC2015.csv
 
 Note, no words were found to have occured more than 10000 times so I included words with over 1000 counts after the MR job.
@@ -108,5 +109,10 @@ http://53eig.ht/1GXaAwQ
 4 Number of times USA and JPN co-occur: Japan--USA = 10, USA--Japan = 0.  This does not include hashtags, which would probably greatly increase the count. Number of times USA and champions co-occur = None found. This probably would be greater than 0 if #USA hadn't been removed.
 
 - Part 2
-Each of the MapReduce parts were implemented using separate MapX.py and ReducerX.py where 'X' represents the part number of the assignment and X = 1-4. The MapReduce was implemented using an EC2 cluster on AWS (AMI 3.8.0).  For each job, multiple part files were produced and had to be downloaded and analyzed to answer the questions in Part 2.  To expedite the process, I also analyzed the outputs locally via the terminal like so : "./MapX.py <input.csv |sort| ./ReducerX.py >output.txt"
+MapX.py, ReducerX.py, Download_Analyze.py
+Each of the MapReduce parts were implemented using separate MapX.py and ReducerX.py where 'X' represents the part number of the assignment and X = 1-4. The MapReduce was implemented using an EC2 cluster on AWS (AMI 3.8.0).  For each job, multiple part files were produced and had to be downloaded and analyzed to answer the questions in Part 2.  To expedite the process, I also analyzed the outputs locally via the terminal like so : "./MapX.py <input.csv |sort| ./ReducerX.py >output.txt". The output files were analyzed in Download_Analyze.py.
+
+- Part 3
+whoosh4.py, 1-index (directory)
+I used whoosh to create a schema for each column in WC2015.csv.  This included dates, usernames, urls, hashtags, and cleaned tweets.  It may have been useful to also include the original tweets for more general queries, however I wasn't sure how whoosh would behave with the original formatting and symbols in the original tweets. I ran four simple queries over all the cleaned up tweets as outlined in whoosh3.py.
 
