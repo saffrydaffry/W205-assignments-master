@@ -48,3 +48,12 @@ https://s3.amazonaws.com/w205_hw3bucket/db_restT_backup_2015-07-20.json
 https://s3.amazonaws.com/w205_hw3bucket/db_tweets_backup_2015-07-20.json
 
 The backups.py file contains two functions, one that creates backups in S3 and another that loads from S3 back into mongodb. The reloading function has the backup files hardwired into a list and would be implemented within a for loop similar to the one used for the backup-to-s3 function.
+
+
+# Assignment 4
+- Part 1
+To extract tweets, I wrote a scrapy program based off of the scrapy spider tutorial. The tweets were saved in a 'preprocessed' .csv file using the built-in writing function from scrapy (terminal command: scrapy crawl [spidername] -o output.csv).  Then I used a script called csv_clean_and_upload.py which reformatted the csv file to clean text and separate hashtags and urls for the MapReduce part. Then that output (WC2015.csv) was uploaded to S3 here: https://s3-us-west-2.amazonaws.com/w205hw4safyre/input/WC2015.csv
+
+-Part 2
+Each of the MapReduce parts were implemented using separate MapX.py and ReducerX.py where 'X' represents the part number of the assignment and X = 1-4. The MapReduce was implemented using an EC2 cluster on AWS (AMI 3.8.0).  For each job, multiple part files were produced and had to be downloaded and analyzed to answer the questions in Part 2.  
+
