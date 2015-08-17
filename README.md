@@ -54,6 +54,32 @@ The backups.py file contains two functions, one that creates backups in S3 and a
 - Part 1
 To extract tweets, I wrote a scrapy program based off of the scrapy spider tutorial. The tweets were saved in a 'preprocessed' .csv file using the built-in writing function from scrapy (terminal command: scrapy crawl [spidername] -o output.csv).  Then I used a script called csv_clean_and_upload.py which reformatted the csv file to clean text and separate hashtags and urls for the MapReduce part. Then that output (WC2015.csv) was uploaded to S3 here: https://s3-us-west-2.amazonaws.com/w205hw4safyre/input/WC2015.csv
 
--Part 2
-Each of the MapReduce parts were implemented using separate MapX.py and ReducerX.py where 'X' represents the part number of the assignment and X = 1-4. The MapReduce was implemented using an EC2 cluster on AWS (AMI 3.8.0).  For each job, multiple part files were produced and had to be downloaded and analyzed to answer the questions in Part 2.  
+Note, no words were found to have occured more than 10000 times so I included words with over 1000 counts after the MR job.
+
+-- Average length of tweets : 56 characters (in cleaning script)
+-- top 20 urls: 
+http://2.sas.com/6010BB7KI
+http://2.sas.com/6014BB73y
+http://2via.me/NPPIQkML11
+http://2via.me/Nuhlu-XT11
+http://2via.me/NztHzVbL11
+http://2via.me/n0yHcaZ111
+http://2via.me/n13e-AcT11
+http://2via.me/n6F6OSML11
+http://2via.me/n7s6OxyT11
+http://2via.me/n8wf--R111
+http://2via.me/nALjwcQT11
+http://2via.me/nD9eD9wD11
+http://2via.me/nGw2L7b111
+http://2via.me/nNW89d8T11
+http://2via.me/nSoR2aHT11
+http://2via.me/ngNRP8S111
+http://2via.me/nnvMLhwT11
+http://365v.nl/1HeamDf
+http://53eig.ht/1BU7NjE
+http://53eig.ht/1GXaAwQ
+
+
+- Part 2
+Each of the MapReduce parts were implemented using separate MapX.py and ReducerX.py where 'X' represents the part number of the assignment and X = 1-4. The MapReduce was implemented using an EC2 cluster on AWS (AMI 3.8.0).  For each job, multiple part files were produced and had to be downloaded and analyzed to answer the questions in Part 2.  To expedite the process, I also analyzed the outputs locally via the terminal like so : "./MapX.py <input.csv |sort| ./ReducerX.py >output.txt"
 
