@@ -56,8 +56,8 @@ To extract tweets, I wrote a scrapy program based off of the scrapy spider tutor
 
 Note, no words were found to have occured more than 10000 times so I included words with over 1000 counts after the MR job.
 
--- Average length of tweets : 56 characters (in cleaning script)
--- top 20 urls: 
+1 Average length of tweets : 56 characters (in cleaning script)
+2 top 20 urls: 
 http://2.sas.com/6010BB7KI
 http://2.sas.com/6014BB73y
 http://2via.me/NPPIQkML11
@@ -79,6 +79,33 @@ http://365v.nl/1HeamDf
 http://53eig.ht/1BU7NjE
 http://53eig.ht/1GXaAwQ
 
+3 Table of support tweets per team (assuming all tweets are supportive). USA is by far the most supported team
+#NOR 2118
+#CRC 661
+#ECU 784
+#NZL 1117
+#FRA 4101
+#JPN 5890
+#MEX 972
+#CHN 2451
+#SWE 2400
+#KOR 1103
+#GER 8911
+#SUI 1630
+#CAN 8211
+#CMR 1253
+#AUS 4338
+#ESP 765
+#NGA 2364
+#COL 2288
+#ENG 12072
+#NED 1841
+#USA 25438
+#CIV 1300
+#THA 1076
+#BRA 1603
+
+4 Number of times USA and JPN co-occur: Japan--USA = 10, USA--Japan = 0.  This does not include hashtags, which would probably greatly increase the count. Number of times USA and champions co-occur = None found. This probably would be greater than 0 if #USA hadn't been removed.
 
 - Part 2
 Each of the MapReduce parts were implemented using separate MapX.py and ReducerX.py where 'X' represents the part number of the assignment and X = 1-4. The MapReduce was implemented using an EC2 cluster on AWS (AMI 3.8.0).  For each job, multiple part files were produced and had to be downloaded and analyzed to answer the questions in Part 2.  To expedite the process, I also analyzed the outputs locally via the terminal like so : "./MapX.py <input.csv |sort| ./ReducerX.py >output.txt"
