@@ -80,30 +80,30 @@ http://53eig.ht/1BU7NjE
 http://53eig.ht/1GXaAwQ
 
 3 Table of support tweets per team (assuming all tweets are supportive). USA is by far the most supported team
-NOR 2118
-CRC 661
-ECU 784
-NZL 1117
-FRA 4101
-JPN 5890
-MEX 972
-CHN 2451
-SWE 2400
-KOR 1103
-GER 8911
-SUI 1630
-CAN 8211
-CMR 1253
-AUS 4338
-ESP 765
-NGA 2364
-COL 2288
-ENG 12072
-NED 1841
-USA 25438
-CIV 1300
-THA 1076
-BRA 1603
+  - NOR 2118
+  - CRC 661
+  - ECU 784
+  - NZL 1117
+  - FRA 4101
+  - JPN 5890
+  - MEX 972
+  - CHN 2451
+  - SWE 2400
+  - KOR 1103
+  - GER 8911
+  - SUI 1630
+  - CAN 8211
+  - CMR 1253
+  - AUS 4338
+  - ESP 765
+  - NGA 2364
+  - COL 2288
+  - ENG 12072
+  - NED 1841
+  - USA 25438
+  - CIV 1300
+  - THA 1076
+  - BRA 1603
 
 4 Number of times USA and JPN co-occur: Japan--USA = 10, USA--Japan = 0.  This does not include hashtags, which would probably greatly increase the count. Number of times USA and champions co-occur = None found. This probably would be greater than 0 if #USA hadn't been removed.
 
